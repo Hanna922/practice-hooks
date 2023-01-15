@@ -11,7 +11,7 @@ const content = [
   },
 ];
 
-const useTabs = (initialTab, allTabs) => {
+export const useTabs = (initialTab, allTabs) => {
   const [currentIndex, setCurrentIndex] = useState(initialTab);
   if (!allTabs || !Array.isArray(allTabs)) {
     return;
@@ -22,16 +22,16 @@ const useTabs = (initialTab, allTabs) => {
   };
 };
 
-const App = () => {
-  const { currentItem, changeItem } = useTabs(0, content);
-  return (
-    <div className="App">
-      {content.map((section, index) => (
-        <button onClick={() => changeItem(index)}>{section.tab}</button>
-      ))}
-      <div>{currentItem.content}</div>
-    </div>
-  );
-};
+// const App = () => {
+//   const { currentItem, changeItem } = useTabs(0, content);
+//   return (
+//     <div className="App">
+//       {content.map((section, index) => (
+//         <button onClick={() => changeItem(index)}>{section.tab}</button>
+//       ))}
+//       <div>{currentItem.content}</div>
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
